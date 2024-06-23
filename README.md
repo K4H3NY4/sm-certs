@@ -17,15 +17,15 @@ The system automatically generates a certificate number and receipt number upon 
 ## API Routes
 
 #### REGISTER USER
-POST: /api/register
-SECURITY: NONE
-FIELDS: 
-name:JK Kahenya
-email:test@gmail.com
-role:customer
-phone_number:+1254700419377
-password:test
-password_confirmation:test
+POST: /api/register<br>
+SECURITY: NONE<br>
+FIELDS: <br>
+name:JK Kahenya<br>
+email:test@gmail.com<br>
+role:customer<br>
+phone_number:+1254700419377<br>
+password:test<br>
+password_confirmation:test<br>
 
 
 #### LOGIN
