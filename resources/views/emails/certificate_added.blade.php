@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Certificate Added</title>
+    <title>Certificate generated</title>
 </head>
 <body>
     <h1>Certificate Added</h1>
