@@ -67,6 +67,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## API Routes
-POST http://127.0.0.1:8000/api/certificates/
+#### POST http://127.0.0.1:8000/api/certificates/
 name,email,order_id,stripe_code .
 
