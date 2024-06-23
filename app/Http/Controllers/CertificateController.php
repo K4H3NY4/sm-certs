@@ -6,6 +6,7 @@ use App\Models\Certificate;
 use App\Mail\CertificateAdded;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class CertificateController extends Controller
 {
@@ -64,13 +65,22 @@ class CertificateController extends Controller
      */
     public function show(string $id)
     {
-        // Find and return the certificate by ID
-        $certificate = Certificate::find($id);
-        if ($certificate) {
-            return response()->json($certificate, 200);
-        } else {
-            return response()->json(['message' => 'Certificate not found'], 404);
-        }
+     // Debugging: log the incoming id
+     Log::info('Searching for certificate with uuid: ' . $id);
+
+     // Find and return the certificate by ID
+     $certificate = Certificate::where('uuid', $id)->first();
+ 
+     if ($certificate) {
+         return response()->json([
+            'message' => 'Certificate found',
+             'valid_till' => $certificate->valid_till,
+             'status' => $certificate->status,
+            // 'email' => $certificate->email,
+         ], 200);
+     } else {
+         return response()->json(['message' => 'Certificate not found'], 404);
+     }
     }
 
     /**
@@ -87,18 +97,17 @@ class CertificateController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // Validate and update the certificate
-        $validatedData = $request->validate([
-            'order_id' => 'sometimes|string|max:255',
-            'email' => 'sometimes|string|max:255',
-            'stripe_code' => 'sometimes|string|max:255',
-        ]);
+      
 
-        $certificate = Certificate::find($id);
+        $certificate = Certificate::where('uuid', $id)->first();
+
         if ($certificate) {
-            $certificate->update($validatedData);
-            return response()->json($certificate, 200);
-        } else {
+           // $certificate->valid_till = $request->input('valid_till', $certificate->valid_till);
+            $certificate->status = $request->input('status', $certificate->status);
+           // $certificate->order_id = $request->input('order_id', $certificate->order_id);
+            $certificate->save();
+            return response()->json(['message' => 'Certificate updated successfully'], 200);
+        } else {   
             return response()->json(['message' => 'Certificate not found'], 404);
         }
     }

@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Certificate extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'order_id', 'email', 'stripe_code', 'name', 'uuid'
+        'order_id', 'email', 'stripe_code', 'name', 'uuid', 'valid_till'
     ];
 
     protected static function boot()
@@ -19,6 +20,7 @@ class Certificate extends Model
 
         static::creating(function ($model) {
             $model->uuid = (string) \Illuminate\Support\Str::uuid();
+            $model->valid_till = Carbon::now()->addYear()->format('Y-m-d');
         });
     }
 

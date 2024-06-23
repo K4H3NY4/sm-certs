@@ -36,6 +36,7 @@ class CertificateAdded extends Mailable
                         'stripe_code' => $this->certificate->stripe_code,
                         'name' => $this->certificate->name,
                         'uuid'=> $this->certificate->uuid,
+                        'valid_till'=> $this->certificate->valid_till,
                     ]);
     }
 }

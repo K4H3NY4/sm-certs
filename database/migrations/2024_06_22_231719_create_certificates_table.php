@@ -21,6 +21,8 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->string('stripe_code')->unique();
             $table->timestamps();
+            $table->string('valid_till')->nullable();
+            $table->string('status')->nullable()->default('valid');
         });
     }
 

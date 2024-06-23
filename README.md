@@ -15,6 +15,34 @@ The system automatically generates a certificate number and receipt number upon 
 
 
 ## API Routes
-#### POST http://127.0.0.1:8000/api/certificates/
+
+#### REGISTER USER
+POST: /api/register
+SECURITY: NONE
+FIELDS: 
+name:JK Kahenya
+email:test@gmail.com
+role:customer
+phone_number:+1254700419377
+password:test
+password_confirmation:test
+
+
+#### LOGIN
+POST: /api/login
+SECURITY: NONE
+FIELDS:
+email:test@gmail.com
+password:test1234
+
+
+#### GENERATE CERT 
+POST: /api/certificates/
+SECURITY: Protection {Bearer Token}
 name,email,order_id,stripe_code .
 
+#### CHECK CERT IF IS VALID
+GET: /api/certificates/{uuid}
+SECURITY: Protected {Bearer Token}
+FIELDS:
+status:redeemed
