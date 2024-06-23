@@ -29,20 +29,20 @@ password_confirmation:test<br>
 
 
 #### LOGIN
-POST: /api/login
-SECURITY: NONE
-FIELDS:
-email:test@gmail.com
-password:test1234
+POST: /api/login<br>
+SECURITY: NONE<br>
+FIELDS:<br>
+email:test@gmail.com<br>
+password:test1234<br>
 
 
 #### GENERATE CERT 
-POST: /api/certificates/
-SECURITY: Protection {Bearer Token}
-name,email,order_id,stripe_code .
+POST: /api/certificates/<br>
+SECURITY: Protection {Bearer Token}<br>
+name, email, order_id, stripe_code .<br>
 
 #### CHECK CERT IF IS VALID
-GET: /api/certificates/{uuid}
-SECURITY: Protected {Bearer Token}
-FIELDS:
-status:redeemed
+GET: /api/certificates/{uuid}<br>
+SECURITY: Protected {Bearer Token}<br>
+FIELDS:<br>
+status:redeemed<br>
