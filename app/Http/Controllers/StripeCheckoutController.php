@@ -66,31 +66,10 @@ class StripeCheckoutController extends Controller
             $payment_method = PaymentMethod::retrieve($payment_intent->payment_method);
             $cardholder_name = $payment_method->billing_details->name;
 
-            // Create a new certificate with the session data
-            $certificate = Certificate::create([
-                'order_id' => $session->id,
-                'email' => $session->customer_email,
-                'name' => $cardholder_name,
-                'session_id' => $session->id,
-                'payment_intent' => $payment_intent_id,
-                'uuid' => (string) \Illuminate\Support\Str::uuid(),
-            ]);
-
-            // Send email with the certificate
-            try {
-                Mail::to($certificate->email)->send(new CertificateAdded($certificate));
-            } catch (\Exception $e) {
-                // Log email sending error
-                \Log::error('Failed to send email: ' . $e->getMessage());
-            }
-
             return response()->json([
                 'message' => 'Payment Successful!',
-                'session_id' => $session->id,
-                'email' => $session->customer_email,
-                'payment_intent' => $payment_intent_id,
-                'cardholder_name' => $cardholder_name,
-                'certificate' => $certificate,
+                'session_id' => $session,
+               
             ]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

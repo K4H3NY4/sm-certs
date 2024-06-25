@@ -48,8 +48,7 @@
             <p>We are pleased to inform you that your travel certificate process has been successfully completed. Please find the details of your certificate and receipt below:</p>
             <p>
                 <strong>Certificate Number:</strong> {{ $uuid }}<br>
-                <strong>Stripe ID:</strong> {{ $session_id }}<br>
-                <strong>Payment Intent:</strong> {{ $payment_intent }}<br>
+                <strong>Checkout ID:</strong> {{ $ch_id }}<br>
                 <Strong>Valid Till:</strong> {{ $valid_till }}
             </p>
             <p class="important">Please note that the travel dates associated with this certificate cannot be changed once they have been confirmed. Ensure that all travel plans align with the dates specified in your certificate.</p>

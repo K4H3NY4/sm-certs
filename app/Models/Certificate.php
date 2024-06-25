@@ -11,7 +11,7 @@ class Certificate extends Model
     use HasFactory;
 
     protected $fillable = [       
-        'name', 'email', 'session_id', 'payment_intent', 'uuid', 'valid_till'
+        'name', 'email', 'ch_id', 'phone', 'uuid', 'valid_till'
 
     ];
 

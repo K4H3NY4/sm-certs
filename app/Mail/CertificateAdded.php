@@ -31,10 +31,8 @@ class CertificateAdded extends Mailable
     {
         return $this->view('emails.certificate_added')
                     ->with([
-                        'order_id' => $this->certificate->order_id,
+                        'ch_id' => $this->certificate->ch_id,
                         'email' => $this->certificate->email,
-                        'session_id' => $this->certificate->session_id,
-                        'payment_intent' => $this->certificate->payment_intent,
                         'name' => $this->certificate->name,
                         'uuid'=> $this->certificate->uuid,
                         'valid_till'=> $this->certificate->valid_till,

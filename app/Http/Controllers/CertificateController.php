@@ -26,8 +26,10 @@ class CertificateController extends Controller
     {
         // Validate the request data
         $validatedData = $request->validate([
-           
+            'ch_id' => 'required|string|max:255',          
+            'phone' => 'required|string|max:255',
             'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
         ]);
     
         // Create the certificate with the validated data and generate UUID

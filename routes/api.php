@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::apiResource('bookings', BookingController::class)->only(['index', 'show']);
-//Route::apiResource('certificates', CertificateController::class)->only(['index','show']);
+Route::apiResource('certificates', CertificateController::class)->only(['index','show']);
 
 Route::get('/user', function (Request $request) {
     return $request->user();

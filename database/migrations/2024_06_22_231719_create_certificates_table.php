@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(); // Make name nullable if it's optional
+            $table->string('phone')->nullable();
             $table->string('email');
-            $table->string('session_id')->unique();
-            $table->string('payment_intent')->unique();
+            $table->string('ch_id')->unique();
             $table->uuid('uuid')->unique(); 
             $table->timestamps();
             $table->string('valid_till')->nullable();
