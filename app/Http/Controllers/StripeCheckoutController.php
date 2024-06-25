@@ -7,8 +7,6 @@ use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use Stripe\PaymentIntent;
 use Stripe\PaymentMethod;
-use App\Models\Certificate;
-use App\Mail\CertificateAdded;
 use Illuminate\Support\Facades\Mail;
 
 class StripeCheckoutController extends Controller
