@@ -20,24 +20,13 @@ class CertificateController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        // Since this is an API, you might not need this method.
-        // Typically, a form is handled in the front end.
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         // Validate the request data
         $validatedData = $request->validate([
-            'order_id' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'stripe_code' => 'required|string|max:255',
+           
             'name' => 'required|string|max:255',
         ]);
     
@@ -83,14 +72,6 @@ class CertificateController extends Controller
      }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        // Since this is an API, you might not need this method.
-        // Typically, a form is handled in the front end.
-    }
 
     /**
      * Update the specified resource in storage.
@@ -118,7 +99,7 @@ class CertificateController extends Controller
     public function destroy(string $id)
     {
         // Find and delete the certificate by ID
-        $certificate = Certificate::find($id);
+        $certificate = Certificate::where('uuid', $id)->first();
         if ($certificate) {
             $certificate->delete();
             return response()->json(['message' => 'Certificate deleted'], 200);

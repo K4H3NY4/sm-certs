@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(); // Make name nullable if it's optional
             $table->string('email');
-            $table->string('order_id')->unique();
-            $table->uuid('uuid')->unique();
-            $table->string('stripe_code')->unique();
+            $table->string('session_id')->unique();
+            $table->string('payment_intent')->unique();
+            $table->uuid('uuid')->unique(); 
             $table->timestamps();
             $table->string('valid_till')->nullable();
             $table->string('status')->nullable()->default('valid');

@@ -49,6 +49,7 @@ class TourController extends Controller
         //
         $tour = Tour::find($id);
         $tour->update($request->all());
+        return Tour::find($id);
     }
 
     /**

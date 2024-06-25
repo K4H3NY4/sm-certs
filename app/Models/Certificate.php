@@ -10,8 +10,9 @@ class Certificate extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'order_id', 'email', 'stripe_code', 'name', 'uuid', 'valid_till'
+    protected $fillable = [       
+        'name', 'email', 'session_id', 'payment_intent', 'uuid', 'valid_till'
+
     ];
 
     protected static function boot()

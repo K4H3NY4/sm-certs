@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function register(Request $request) {
-        $fields = $request->validate([
+    public function register(Request $request)
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
             'role' => 'required|string|max:255',
@@ -19,24 +22,38 @@ class UserController extends Controller
             'password' => 'required|string|confirmed|min:8'
         ]);
 
-        $user = User::create([
-            'name' => $fields['name'],
-            'email' => $fields['email'],
-            'role' => $fields['role'],
-            'phone_number' => $fields['phone_number'],
-            'password' => Hash::make($fields['password'])
-        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
-        $token = $user->createToken('myapptoken')->plainTextToken;
+        try {
+            // Create the user
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'role' => $request->role,
+                'phone_number' => $request->phone_number,
+                'password' => Hash::make($request->password)
+            ]);
 
-        return response([
-            'user' => $user,
-            'token' => $token
-        ], 201);
+            // Create a token for the user
+            $token = $user->createToken('myapptoken')->plainTextToken;
+
+            // Return the created user and token
+            return response()->json([
+                'user' => $user,
+                'token' => $token
+            ], 201);
+        } catch (\Exception $e) {
+            Log::error('Error during user registration: ' . $e->getMessage());
+            return response()->json(['message' => 'Registration failed'], 500);
+        }
     }
 
     // Login user
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
+        // Validate the request data
         $fields = $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string'
@@ -47,25 +64,25 @@ class UserController extends Controller
 
         // Check password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
-            return response([
-                'message' => 'Invalid credentials'
-            ], 401);
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
+        // Create a token for the user
         $token = $user->createToken('myapptoken')->plainTextToken;
 
-        return response([
+        // Return the user and token
+        return response()->json([
             'user' => $user,
             'token' => $token
         ], 200);
     }
 
     // Logout user
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
+        // Revoke all tokens for the authenticated user
         $request->user()->tokens()->delete();
 
-        return response([
-            'message' => 'Logged out'
-        ], 200);
+        return response()->json(['message' => 'Logged out'], 200);
     }
 }

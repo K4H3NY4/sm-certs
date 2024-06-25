@@ -33,7 +33,8 @@ class CertificateAdded extends Mailable
                     ->with([
                         'order_id' => $this->certificate->order_id,
                         'email' => $this->certificate->email,
-                        'stripe_code' => $this->certificate->stripe_code,
+                        'session_id' => $this->certificate->session_id,
+                        'payment_intent' => $this->certificate->payment_intent,
                         'name' => $this->certificate->name,
                         'uuid'=> $this->certificate->uuid,
                         'valid_till'=> $this->certificate->valid_till,
