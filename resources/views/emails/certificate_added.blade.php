@@ -57,6 +57,7 @@
             <p>Thank you for choosing our service.</p>
             <p>Best regards,</p>
             <p>Buy Safari<br> 0313-7455800 </p>
+            <p>Toll Free Number: 1833VisitKenya</p>
         </div>
         <div class="footer">
             <p><strong>Disclaimer:</strong> The travel dates specified in the certificate are final and cannot be altered. Please review the certificate thoroughly to ensure all details are correct before making any travel arrangements.</p>

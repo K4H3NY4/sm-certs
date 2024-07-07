@@ -213,6 +213,7 @@
             <br/><br/>
         <h4>BUY SAFARI US</h4>
            <p>+254795654102 | +25495655232 | +254795655707</p>
+           <p>Toll Free Number: 1833VisitKenya</p>
        </div><!-- /.col-lg-4 -->
        
        <div class="col-lg-3">

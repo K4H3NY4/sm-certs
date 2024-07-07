@@ -139,8 +139,7 @@
     padding-left: 25% !important;">
                 <li>5-star beach front resort</li>
                 <li>Full board meals (Breakfast, lunch, and dinner)</li>
-                <li>Sunset Helicopter Ride</li>
-                <li>2 Full-body massages</li>
+                <li> 2 hours sessions of massage per adult this can be divided into different massages or 2 one hour sessions</li>
                 <li>Kids’ corner with Swimming pool and water park access</li>
                 <li>Ice cream party on the beach.</li>
                 <li>Kone Kone Art Highlife music (until 2 pm)</li>
@@ -159,6 +158,7 @@
                 <br/><br/>
                 <h4>BUY SAFARI US</h4>
                 <p>+254795654102 | +25495655232 | +254795655707</p>
+                <p>Toll Free Number: 1833VisitKenya</p>
             </div><!-- /.col-lg-3 -->
             <div class="col-lg-3">
                 <h4>Useful Links</h4>
