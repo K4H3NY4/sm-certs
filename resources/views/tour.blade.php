@@ -122,7 +122,7 @@
                             <label for="email" class="form-label text-dark">Email</label>
                             <input type="email" name="email" id="email" class="form-control">
                         </div>
-                        <input type="hidden" name="price_id" value="price_1PVL5SDJMaw1PsX7yWqvGuas">
+                        <input type="hidden" name="price_id" value="price_1PaeiT038qZ0ovLGhMHjndIF">
                         <button type="submit" class="btn text-dark w-100 btn-light" id="pay-now" >PAY NOW</button>
                     </form>
                 </div>
@@ -156,8 +156,8 @@
             <div class="col-lg-3">
                 <img src="/img/Buy Safari Logo.png" alt="">
                 <br/><br/>
-                <h4>BUY SAFARI US</h4>
-                <p>+254795654102 | +25495655232 | +254795655707</p>
+                <h4>BOOK SAFARI US</h4>
+        
                 <p>Toll Free Number: 1833VisitKenya</p>
             </div><!-- /.col-lg-3 -->
             <div class="col-lg-3">
@@ -190,7 +190,7 @@
         <hr class="my-5">
         <div class="row">
             <div class="col-lg-6">
-                <p>Copyright @ 2024 <span style="color:#FFA800;">Buy Us Safari</span> All Rights Reserved By <span style="color:#FFA800;">Swahili Village Media</span></p>
+                <p>Copyright @ 2024 <span style="color:#FFA800;">Book Safari</span> All Rights Reserved By <span style="color:#FFA800;">Swahili Village Media</span></p>
             </div>
             <div class="col-lg-6 text-end">
                 <p>Privacy | Terms & Conditions</p>

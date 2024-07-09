@@ -8,9 +8,9 @@ use Stripe\Checkout\Session;
 use Stripe\PaymentIntent;
 use Stripe\PaymentMethod;
 use Illuminate\Support\Facades\Mail;
-
-
-use App\Http\Controllers\CertificateController;
+use App\Models\Certificate;
+use App\Mail\CertificateAdded;
+use Illuminate\Support\Str;
 
 class StripeCheckoutController extends Controller
 {
@@ -24,10 +24,6 @@ class StripeCheckoutController extends Controller
             'price_id' => 'required|string',
             'quantity' => 'required|integer',
             'email' => 'required|email',
-            'phone' => 'required|string',
-            'cardholder_name' => 'required|string',
-            
-
         ]);
 
         try {
@@ -39,10 +35,6 @@ class StripeCheckoutController extends Controller
                     'quantity' => $request->quantity,
                 ]],
                 'customer_email' => $request->email,
-                'metadata' => [
-                    'cardholder_name' => $request->cardholder_name,
-                    'customer_phone' => $request->phone,
-                ],
                 'mode' => 'payment',
                 'success_url' => url('/api/checkout/success?session_id={CHECKOUT_SESSION_ID}'),
                 'cancel_url' => url('/api/checkout/cancel'),

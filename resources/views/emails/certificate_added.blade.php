@@ -56,7 +56,7 @@
             <p>Should you have any questions or require further assistance, please do not hesitate to contact our support team.</p>
             <p>Thank you for choosing our service.</p>
             <p>Best regards,</p>
-            <p>Buy Safari<br> 0313-7455800 </p>
+            <p>Book Safari </p>
             <p>Toll Free Number: 1833VisitKenya</p>
         </div>
         <div class="footer">

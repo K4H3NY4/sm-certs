@@ -156,11 +156,7 @@
         <img src="/img/Jackie.png" style="width: 100%;" alt="">
         <p>OFFICE MANAGER</p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4 col-md-6 col-sm-6 col-6" >
-       <img src="/img/Ann.png" style="width: 100%;" alt="">
-       <p>ACCOUNTANT</p>
-      </div><!-- /.col-lg-4 -->
-
+    
       <div class="col-lg-4 col-md-6 col-sm-6 col-6" >
        <img src="/img/ken.png" style="width: 100%;" alt="">
        <p>DESIGN AND GRAPHICS</p>
@@ -186,9 +182,6 @@
         <p>IT DEVELOPER</p>
        </div><!-- /.col-lg-4 -->
        
-       <div class="col-lg-4 col-md-6 col-sm-6 col-6" >
-        <img src="/img/makori.png" alt="" style="width: 100%;">
-       </div><!-- /.col-lg-4 -->
        
  
 
@@ -211,8 +204,8 @@
         <div class="col-lg-3 ">
             <img src="/img/Buy Safari Logo.png" alt="">
             <br/><br/>
-        <h4>BUY SAFARI US</h4>
-           <p>+254795654102 | +25495655232 | +254795655707</p>
+        <h4>BOOK SAFARI US</h4>
+           
            <p>Toll Free Number: 1833VisitKenya</p>
        </div><!-- /.col-lg-4 -->
        
@@ -248,7 +241,7 @@
         <hr>
        
        <div class="col-lg-6">
-        <p>Copyright @ 2024  <span style="color:#FFA800;">Buy Us Safari </span> All Rights Reserved By <span style="color:#FFA800;">Swahili Village Media</span></p>
+        <p>Copyright @ 2024  <span style="color:#FFA800;">Book Safari </span> All Rights Reserved By <span style="color:#FFA800;">Swahili Village Media</span></p>
        </div><!-- /.col-lg-4 -->
 
        <div class="col-lg-6 text-right" style="text-align: right;">
